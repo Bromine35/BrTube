@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>BrTube</title>
+</head>
+
+<body>
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
+  hi
+  <pre>
+    // Declare the default API URL
+    let defaultApiUrl = 'https://co.wuk.sh/';
+
+    // Function to fix the API URL by removing trailing slashes
+    const fixApiUrl = (apiUrl) => {
+        return apiUrl.endsWith("/")? apiUrl.slice(0, -1) : apiUrl;
+    };
+
+    // Initialize the API URL with the default value
+    let apiURL = fixApiUrl(defaultApiUrl);
+
+    // Function to change the API URL
+    const changeApi = (newApiUrl) => {
+        apiURL = fixApiUrl(newApiUrl);
+    };
+
+    // Object representing the body of the request
+    const aBody = {
+        url: "https://www.youtube.com/watch?v=fAqa1ozCuj8"
+    };
+
+    // Asynchronous function to perform the API call
+    async function fetchDataAndOpen() {
+        try {
+            const response = await fetch(`${apiURL}/api/json`, {
+                method: "POST",
+                body: JSON.stringify(aBody),
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const data = await response.json();
+            // Assuming the response contains a URL property that needs to be opened
+            window.open(data.url, "_blank");
+        } catch (error) {
+            console.error("There was a problem with the fetch operation:", error);
+        }
+    }
+
+    // Call the asynchronous function
+    fetchDataAndOpen();
+  </pre>
+  <script>
+
+    // Declare the default API URL
+    let defaultApiUrl = 'https://co.wuk.sh/';
+
+    // Function to fix the API URL by removing trailing slashes
+    const fixApiUrl = (apiUrl) => {
+        return apiUrl.endsWith("/")? apiUrl.slice(0, -1) : apiUrl;
+    };
+
+    // Initialize the API URL with the default value
+    let apiURL = fixApiUrl(defaultApiUrl);
+
+    // Function to change the API URL
+    const changeApi = (newApiUrl) => {
+        apiURL = fixApiUrl(newApiUrl);
+    };
+
+    // Object representing the body of the request
+    const aBody = {
+        url: "https://www.youtube.com/watch?v=fAqa1ozCuj8"
+    };
+
+    // Asynchronous function to perform the API call
+    async function fetchDataAndOpen() {
+        try {
+            const response = await fetch(`${apiURL}/api/json`, {
+                method: "POST",
+                body: JSON.stringify(aBody),
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const data = await response.json();
+            // Assuming the response contains a URL property that needs to be opened
+            window.open(data.url, "_blank");
+        } catch (error) {
+            console.error("There was a problem with the fetch operation:", error);
+        }
+    }
+
+    // Call the asynchronous function
+    fetchDataAndOpen();
+
+    
+  </script>
+</body>
+</html>

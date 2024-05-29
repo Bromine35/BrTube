@@ -1,0 +1,81 @@
+.urbanist-600 {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.urbanist-400 {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.urbanist-900 {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.center {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "Header";
+  src:
+    url("calsans-semibold.woff2") format("woff2");
+}
+
+h1 {
+  font-family: "Header", monospace;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-size: 10vh;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  background-color: #eff1f5;
+  color: #4c4f69;
+  font-family: "inter", monospace;
+  border-radius: 0.75em;
+  border-color: #313244;
+  border-width: 1px;
+  border-style: solid;
+  width: 30vw;
+  text-align: center;
+}
+
+.button {
+    padding: 10px;
+    background-color: #eff1f5;
+    color: #000000;
+    font-family: monospace;
+    border-radius: 0.75em;
+    border-color: #313244;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+  cursor: pointer;
+}
+
+.videoName {
+  font-size: 6vh;
+}
+
+.authorName {
+  font-size: 3vh;
+}
+
+.button {
+  position: fixed;
+  margin-left: 10px;
+}
+
+iframe {
+  border-radius: 1em;
+}
