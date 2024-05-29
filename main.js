@@ -20,12 +20,12 @@ function populateMain() {
           const videoElement = document.createElement('div');
           videoElement.classList.add('video');
           videoElement.innerHTML = `
-              <a href="/watch?v=${video.videoId}">
+              <a href="/watch.html?v=${video.videoId}">
               <div class="image">
                 <img src="${video.videoThumbnails[0].url}" alt="${video.title}">
               </div>
               </a>
-              <div class="vidInfo"><a href="/watch?v=${video.videoId}">
+              <div class="vidInfo"><a href="/watch.html?v=${video.videoId}">
                 <div class="videoName urbanist-400">
                   <p>${video.title}</p>
                 </div>
@@ -62,12 +62,12 @@ function populateSearch() {
           const videoElement = document.createElement('div');
           videoElement.classList.add('video');
           videoElement.innerHTML = `
-              <a href="/watch?v=${video.videoId}">
+              <a href="/watch.html?v=${video.videoId}">
               <div class="image">
                 <img src="${video.videoThumbnails[0].url}" alt="${video.title}">
               </div>
               </a>
-              <div class="vidInfo"><a href="/watch?v=${video.videoId}">
+              <div class="vidInfo"><a href="/watch.html?v=${video.videoId}">
                 <div class="videoName urbanist-400">
                   <p>${video.title}</p>
                 </div>
