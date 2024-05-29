@@ -11,11 +11,12 @@ fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${vide
     .then(response => response.json())
     .then(data => {
         const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}`;
+        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
         var newHeight = window.innerHeight * 0.8;
         var newWidth = newHeight / (data.height / data.width);
         iframe.width = newWidth;
         iframe.height = newHeight;
+        iframe.autoselect= true
         document.getElementById("vidCont").appendChild(iframe);
 
         document.getElementById("videoName").innerHTML = data.title;
@@ -33,11 +34,12 @@ fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${vide
             }
         };
         document.getElementById("authorName").appendChild(document.createElement('br'))
+              fullscreenButton.classList.add('smallButton');
         document.getElementById("authorName").appendChild(fullscreenButton);
 
         const downloadButton = document.createElement('button');
         downloadButton.textContent = 'Download (MP4, 1080p)';
-
+        
         downloadButton.onclick = function() {
             let defaultApiUrl = 'https://co.wuk.sh/';
 
@@ -124,6 +126,8 @@ fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${vide
 
             fetchDataAndOpen();
         }
+          downloadButton.classList.add('smallButton');
+          downloadButton2.classList.add('smallButton');
         document.getElementById("authorName").appendChild(downloadButton);
         document.getElementById("authorName").appendChild(downloadButton2);
     })

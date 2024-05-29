@@ -12,34 +12,54 @@
 </head>
 
 <body>
-  <h1 class="center">BrTube YTVideo Viewer/Unblocker</h1>
-  <h2 class="center urbanist-600">Enter the YouTube video link here:</h2>
-  </script>
+  <h1 class="center">DoxrTube</h1>
   <div class="center">
-  <input style="font-family: monospace;" id="link" type="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button onclick="submit()" class="button">Go!</button>
-    <br>
-    <p class="center urbanist-600">Or, replace <code>youtube.com</code> in a youtube link to <code id="codelol">I'm still loading!</code></p>
-    <script>
-      (function() {
-        document.getElementById("codelol").innerHTML = window.location.hostname;
-      })();
-
-      function submit() {
-        const queryString = document.getElementById("link").value;
-            const parsedUrl = new URL(queryString);
-            const path = parsedUrl.pathname;
-            let trueUrl = ''
-            if (path.startsWith("/watch")) {
-                const queryParams = new URLSearchParams(parsedUrl.search);
-              trueUrl = queryParams.get("v");
-            }
-        console.log("videoid: " + trueUrl)
-         location.href="/watch?v="+trueUrl;
-        console.log("uh")
-      }
-    </script>
+    <h3 class="urbanist-600" id="link" type="text">Search - Use <a style="color: black;" href="target.html">the Targeter</a> to unblock specific videos.</h3>
+    <input style="font-family: monospace;" id="search" type="text" placeholder="kendrick lamar not like us diss"><button onclick="populateSearch()" class="button">Go!</button>
   </div>
-  <br>
-  <p class="urbanist-400"><small>Use the BrTube web client! (coming later)</small></p>
+  </script>
+  <div class="main" id="main">
+    
+    <div class="video">
+      <div class="image">
+        <img src="https://vid.puffyan.us/vi/cffU0jSYJd8/maxresdefault.jpg">
+      </div>
+      <div class="vidInfo">
+        <div class="videoName urbanist-400">
+          <p>Ben Eshericks EATS!!!</p>
+        </div>
+        <div class="authorName urbanist-400">
+          <p>Mr. Beast</p>
+        </div>
+      </div>
+    </div>
+      <div class="video">
+        <div class="image">
+          <img src="https://vid.puffyan.us/vi/cffU0jSYJd8/maxresdefault.jpg">
+        </div>
+        <div class="vidInfo">
+          <div class="videoName urbanist-400">
+            <p>Ben Eshericks EATS!!!</p>
+          </div>
+          <div class="authorName urbanist-400">
+            <p>Mr. Beast</p>
+          </div>
+        </div>
+      </div>    
+    <div class="video">
+      <div class="image">
+        <img src="https://vid.puffyan.us/vi/cffU0jSYJd8/maxresdefault.jpg">
+      </div>
+      <div class="vidInfo">
+        <div class="videoName urbanist-400">
+          <p>Ben Eshericks EATS!!!</p>
+        </div>
+        <div class="authorName urbanist-400">
+          <p>Mr. Beast</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+  <script src="main.js"></script>
 </html>

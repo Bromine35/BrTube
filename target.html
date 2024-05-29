@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>BrTube</title>
+  <link href="viewer.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="center">DoxrTube - Targeter</h1>
+  <h2 class="center urbanist-600">Enter the YouTube video link here:</h2>
+  </script>
+  <div class="center">
+  <input style="font-family: monospace;" id="link" type="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button onclick="submit()" class="button">Go!</button>
+    <br>
+    <p class="center urbanist-600">Or, replace <code>youtube.com</code> in a youtube link to <code id="codelol">I'm still loading!</code></p>
+    <script>
+      (function() {
+        document.getElementById("codelol").innerHTML = window.location.hostname;
+      })();
+
+      function submit() {
+        const queryString = document.getElementById("link").value;
+            const parsedUrl = new URL(queryString);
+            const path = parsedUrl.pathname;
+            let trueUrl = ''
+            if (path.startsWith("/watch")) {
+                const queryParams = new URLSearchParams(parsedUrl.search);
+              trueUrl = queryParams.get("v");
+            }
+        console.log("videoid: " + trueUrl)
+         location.href="/watch?v="+trueUrl;
+        console.log("uh")
+      }
+    </script>
+  </div>
+  <br>
+  <p class="urbanist-400"><small>Use the BrTube web client! (coming later)</small></p>
+</body>
+</html>
