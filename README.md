@@ -1,5 +1,10 @@
 # BrTube
-Open source YouTube video viewer/downloader/unblocker.
+Open source, simplistic YouTube video viewer/downloader/unblocker. Nothing is proxied through a server, so video speeds aren't affected.
+
+## To-Do:
+- Convert YouTube shorts links to regular YouTube links
+- Add feeds (useful for the player's right side)
+- **Make a full-fledged web client, with feeds and support for watching YouTube shorts**
 
 ## Credits:
 
